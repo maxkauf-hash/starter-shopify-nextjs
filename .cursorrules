@@ -1,0 +1,203 @@
+# E-commerce Project Rules
+
+## Libraries
+- Shadcn is used for the UI
+- Tailwind is used for the styling
+- React-query is used for the data fetching
+- TypeScript is used for the type safety
+- Next.js is used for the framework
+- GraphQL is used for the API
+- React-hook-form is used for the form handling
+- React-table is used for the table, grid, pagination, sorting, filtering
+- React-icons is used for the icons
+- React-hot-toast is used for the toast notifications
+- React-hook-form is used for the form handling
+
+
+## Project Structure
+- Use feature-based folder structure
+- Keep related files together
+- Maintain clear separation of concerns
+- Follow atomic design principles for components
+
+## Shopify Integration
+- Use strongly typed GraphQL queries
+- Implement proper error handling for API calls
+- Cache responses appropriately with react-query
+- Keep API logic in dedicated services
+
+## Component Guidelines
+- Use shadcn components as base building blocks
+- Implement proper prop types with TypeScript
+- Keep components small and focused
+- Follow atomic design principles
+
+## State Management
+- Use react-query for server state
+- Implement proper loading and error states
+- Cache invalidation strategies
+- Optimistic updates when appropriate
+
+## Styling
+- Use Tailwind CSS with consistent patterns
+- Follow mobile-first approach
+- Maintain design system tokens
+- Keep styles modular and reusable
+
+## Data Display
+- Implement react-table with proper typing
+- Use virtual scrolling for large datasets
+- Implement proper sorting and filtering
+- Handle loading and error states
+
+## Performance
+- Implement proper code splitting
+- Use Next.js Image component
+- Optimize bundle size
+- Cache GraphQL queries appropriately
+
+## Testing
+- Write unit tests for components
+- Test GraphQL integrations
+- Implement E2E tests for critical flows
+- Mock Shopify API responses
+
+## Error Handling
+- Implement proper error boundaries
+- Show user-friendly error messages
+- Log errors appropriately
+- Handle network errors gracefully
+
+## Folder Structure
+
+```
+├── app/
+│   ├── (auth)/               # Routes authentifiées (login, register, etc.)
+│   │   ├── login/             # Composants UI de base (shadcn)
+│   │   │   ├── page.tsx       # Page de login
+│   │   ├── register/          # Composants UI de base (shadcn)
+│   │   │   ├── page.tsx       # Page de login
+│   │   ├── layout.tsx             # Layout personnalisé pour les pages d'authentification
+│   ├── (dashboard)/          # Routes du dashboard
+│   ├── api/                  # Routes API
+│   ├── layout.tsx           # Layout racine
+│   └── page.tsx            # Page d'accueil
+├── src/
+│   ├── components/          # Composants réutilisables
+│   │   ├── ui/             # Composants UI de base (shadcn)
+│   │   ├── forms/          # Composants de formulaires
+│   │   └── shared/         # Composants partagés
+│   ├── hooks/              # Hooks personnalisés
+│   │   ├── auth/          # Hooks d'authentification
+│   │   │   ├── use-auth.ts        # Hook principal d'authentification
+│   │   │   ├── use-user.ts        # Hook pour la gestion de l'utilisateur
+│   │   │   └── use-permissions.ts  # Hook pour la gestion des permissions
+│   │   ├── shop/          # Hooks liés à la boutique
+│   │   │   ├── use-cart.ts        # Hook pour la gestion du panier
+│   │   │   ├── use-products.ts     # Hook pour la gestion des produits
+│   │   │   ├── use-collections.ts  # Hook pour la gestion des collections
+│   │   │   └── use-checkout.ts     # Hook pour le processus de paiement
+│   │   ├── ui/            # Hooks d'interface utilisateur
+│   │   │   ├── use-toast.ts       # Hook pour les notifications toast
+│   │   │   ├── use-modal.ts       # Hook pour la gestion des modals
+│   │   │   ├── use-pagination.ts  # Hook pour la pagination
+│   │   │   └── use-sort.ts        # Hook pour le tri des données
+│   │   ├── api/           # Hooks pour les appels API
+│   │   │   ├── use-query.ts          # Hook générique pour les requêtes GraphQL
+│   │   │   ├── use-mutation.ts       # Hook générique pour les mutations GraphQL
+│   │   │   └── use-infinite-query.ts # Hook pour le chargement infini
+│   │   └── common/        # Hooks utilitaires communs
+│   │       ├── use-debounce.ts      # Hook pour le debouncing
+│   │       ├── use-local-storage.ts # Hook pour le stockage local
+│   │       └── use-window-size.ts   # Hook pour la réactivité
+│   ├── context/            # Contextes React
+│   │   ├── cart-context.tsx    # Contexte pour la gestion du panier
+│   │   ├── auth-context.tsx    # Contexte pour l'authentification
+│   │   ├── shop-context.tsx    # Contexte pour les données de la boutique
+│   │   └── ui-context.tsx      # Contexte pour l'état global de l'UI
+│   ├── config/             # Configuration
+│   │   ├── site.ts        # Configuration du site (métadonnées, URLs, etc.)
+│   │   ├── constants.ts   # Constantes globales
+│   │   ├── shopify.ts     # Configuration de l'API Shopify
+│   │   ├── react-query.ts # Configuration de React Query (cache, retries, etc.)
+│   │   └── env.ts         # Types et validation des variables d'environnement
+│   ├── services/          # Services (API, etc.)
+│   │   ├── shopify/      # Services Shopify
+│   │   └── auth/         # Services d'authentification
+│   ├── lib/              # Utilitaires et helpers
+│   │   ├── utils.ts
+│   │   └── validations.ts
+│   └── types/            # Types TypeScript
+│       ├── shopify.ts
+│       └── common.ts
+├── public/               # Assets statiques
+└── prisma/              # Schéma et migrations Prisma (si utilisé)
+```
+
+### Description des Dossiers
+
+- `app/`: Contient toutes les routes et pages de l'application (App Router)
+- `src/`: Contient tout le code source de l'application
+  - `components/`: Composants React organisés par domaine
+  - `hooks/`: Hooks React personnalisés
+  - `context/`: Contextes React pour le state global
+  - `config/`: Configuration et constantes
+  - `services/`: Services et logique métier
+  - `lib/`: Utilitaires et helpers
+  - `types/`: Types TypeScript partagés
+
+### Conventions de Structure
+
+- Les composants spécifiques à une route doivent être placés dans le dossier de la route
+- Les composants partagés doivent être placés dans `src/components`
+- Les hooks spécifiques à une fonctionnalité doivent être placés dans `src/hooks`
+- Les services doivent être organisés par domaine dans `src/services`
+- Les types partagés doivent être placés dans `src/types`
+
+## Conventions de Nommage
+
+### Fichiers
+- Components React: kebab-case (ex: `product-card.tsx`, `header-navigation.tsx`)
+- Pages Next.js: kebab-case (ex: `page.tsx`, `loading.tsx`, `error.tsx`)
+- Utilitaires: camelCase (ex: `format-price.ts`, `use-shopify-query.ts`)
+- Tests: nom du fichier + `.test.tsx` (ex: `product-card.test.tsx`)
+- Types: PascalCase + `.types.ts` (ex: `Product.types.ts`)
+- Styles: nom du composant + `.styles.ts` (ex: `ProductCard.styles.ts`)
+- Hooks: kebab-case commençant par 'use' (ex: `use-cart`, `use-products`)
+
+### Classes et Interfaces
+- Classes: PascalCase (ex: `ShopifyClient`, `ProductService`)
+- Interfaces: PascalCase avec préfixe I (ex: `IProduct`, `ICartItem`)
+- Types: PascalCase (ex: `ProductVariant`, `CartLineItem`)
+- Enums: PascalCase (ex: `OrderStatus`, `ProductType`)
+
+### Variables et Fonctions
+- Variables: camelCase (ex: `productList`, `cartItems`)
+- Constantes: UPPER_SNAKE_CASE (ex: `MAX_PRODUCTS_PER_PAGE`, `API_VERSION`)
+- Fonctions: camelCase (ex: `fetchProducts`, `updateCart`)
+- Hooks: kebab-case commençant par 'use' (ex: `use-cart`, `use-products`)
+- Event Handlers: PascalCase commençant par 'handle' (ex: `handleSubmit`, `handleProductClick`)
+
+### Props et State
+- Props Interfaces: PascalCase avec suffixe Props (ex: `ProductCardProps`, `HeaderProps`)
+- State Variables: camelCase descriptif (ex: `isLoading`, `hasError`)
+- Context: kebab-case avec suffixe Context (ex: `cart-context`, `shop-context`)
+
+### Variables d'Environnement
+- Préfixe NEXT_PUBLIC_ pour variables côté client
+- UPPER_SNAKE_CASE pour toutes les variables
+- Catégorisation par préfixe:
+  - SHOPIFY_* (ex: `SHOPIFY_STORE_DOMAIN`, `SHOPIFY_ACCESS_TOKEN`)
+  - NEXT_PUBLIC_* (ex: `NEXT_PUBLIC_API_URL`)
+  - AUTH_* (ex: `AUTH_SECRET`, `AUTH_PROVIDER`)
+  - API_* (ex: `API_KEY`, `API_VERSION`)
+
+### CSS et Tailwind
+- Classes personnalisées: kebab-case (ex: `product-grid`, `cart-sidebar`)
+- Variants Tailwind: camelCase (ex: `hoverEffect`, `darkMode`)
+- Variables CSS: kebab-case (ex: `--primary-color`, `--font-heading`)
+
+### GraphQL
+- Queries: camelCase (ex: `getProducts`, `fetchCollections`)
+- Mutations: camelCase verbe + nom (ex: `addToCart`, `updateProductQuantity`)
+- Fragments: camelCase avec suffixe Fragment (ex: `productFragment`, `cartItemFragment`)
