@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛍️ Starter Kit Shopify Next.js
 
-## Getting Started
+Un template moderne et performant pour créer des boutiques en ligne avec Shopify, Next.js 14, et les meilleures pratiques actuelles.
 
-First, run the development server:
+## ✨ Fonctionnalités
+
+- 🛠️ Next.js 14 avec App Router
+- 🎨 UI moderne avec Shadcn et Tailwind CSS
+- 🔄 Gestion d'état avec React Query
+- 📝 TypeScript pour la sécurité des types
+- 🛒 Intégration Shopify complète avec GraphQL
+- 📱 Design responsive et mobile-first
+- 🎯 SEO optimisé
+- 🔍 Recherche de produits performante
+- 🏷️ Gestion des collections
+- 🛒 Panier d'achat dynamique
+- 💳 Processus de paiement sécurisé
+
+## 🚀 Démarrage Rapide
 
 ```bash
+# Cloner le repo
+git clone https://github.com/votre-username/starter-shopify-nextjs.git
+
+# Installer les dépendances
+npm install
+
+# Configurer les variables d'environnement
+cp .env.example .env.local
+
+# Lancer le serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 Configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Créez un compte Shopify et une app privée
+2. Copiez vos credentials dans le fichier `.env.local`
+3. Configurez vos variables d'environnement :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+SHOPIFY_STORE_DOMAIN=votre-store.myshopify.com
+SHOPIFY_STOREFRONT_ACCESS_TOKEN=votre_access_token
+```
 
-## Learn More
+## 📁 Structure du Projet
 
-To learn more about Next.js, take a look at the following resources:
+Le projet suit une architecture feature-based avec une séparation claire des responsabilités :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/` - Routes et pages (Next.js App Router)
+- `src/components/` - Composants React réutilisables
+- `src/hooks/` - Custom hooks
+- `src/lib/` - Utilitaires et helpers
+- `src/services/` - Services d'API et logique métier
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Technologies Utilisées
 
-## Deploy on Vercel
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- Shadcn UI
+- React Query
+- GraphQL
+- React Hook Form
+- React Table
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📚 Documentation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pour plus de détails sur l'utilisation et la personnalisation, consultez :
+
+- [Documentation Complète](docs/README.md)
+- [Guide de Contribution](CONTRIBUTING.md)
+- [Guide de Style](STYLE_GUIDE.md)
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! Consultez notre [Guide de Contribution](CONTRIBUTING.md) pour commencer.
+
+## 📝 License
+
+MIT License - voir le fichier [LICENSE](LICENSE) pour plus de détails.
